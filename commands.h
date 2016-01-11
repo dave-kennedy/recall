@@ -1,6 +1,7 @@
 #define NUM_COMMANDS 8
 
 Command commands[NUM_COMMANDS] = {
+	/* command                     description        additional keywords */
 	{ "amixer -Mq set Master 1%-", "decrease volume", "lower down" },
 	{ "amixer -Mq set Master 1%+", "increase volume", "raise up" },
 	{ "makepkg -sri", "build and install a package using a PKGBUILD" },
