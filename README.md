@@ -23,8 +23,21 @@ a list of additional keywords:
 
 ```c
 Command commands[NUM_COMMANDS] = {
-	{ "amixer -Mq set Master 1%-", "decrease volume", "lower down" },
-	{ "amixer -Mq set Master 1%+", "increase volume", "raise up" }
+	/* command                     description        additional keywords */
+	{ "amixer -Mq set Master 1%-", "decrease volume", "down lower sound" },
+	{ "amixer -Mq set Master 1%+", "increase volume", "raise sound up" },
+	...
+};
+```
+
+If you find yourself defining the same additional keywords for lots of commands,
+you can instead define synonyms which apply to all commands:
+
+```c
+Synonym synonyms[NUM_SYNONYMS] = {
+	"display find list print show view",
+	"information status",
+	...
 };
 ```
 
@@ -41,7 +54,3 @@ However, if I want to increase the volume, I often forget that I even need to
 use `amixer`, let alone the rest of the command. So I have to ask Google or
 maintain a list of commands and their descriptions. This program is just a fancy
 replacement for that list.
-
-## todo
-
-Add support for defining synonyms (display, print, show).
