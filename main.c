@@ -6,7 +6,7 @@
 #include "main.h"
 #include "commands.h"
 
-Result results[MAX_RESULTS];
+Result results[NUM_COMMANDS];
 
 int main(int argc, char **argv)
 {

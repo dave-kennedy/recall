@@ -37,5 +37,5 @@ Command commands[] = {
 	{ "pacman -Qo [file]", "list packages that own file", "owned" }
 };
 
-static const int NUM_COMMANDS = sizeof(commands) / sizeof(Command);
-static const int NUM_SYNONYMS = sizeof(synonyms) / sizeof(Synonym);
+#define NUM_COMMANDS (sizeof(commands) / sizeof(Command))
+#define NUM_SYNONYMS (sizeof(synonyms) / sizeof(Synonym))
