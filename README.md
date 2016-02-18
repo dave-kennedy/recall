@@ -22,7 +22,7 @@ Commands are defined in commands.h and can optionally include a description and
 a list of additional keywords:
 
 ```c
-Command commands[NUM_COMMANDS] = {
+Command commands[] = {
 	/* command                     description        additional keywords */
 	{ "amixer -Mq set Master 1%-", "decrease volume", "down lower sound" },
 	{ "amixer -Mq set Master 1%+", "increase volume", "raise sound up" },
@@ -34,7 +34,7 @@ If you find yourself defining the same additional keywords for lots of commands,
 you can instead define synonyms which apply to all commands:
 
 ```c
-Synonym synonyms[NUM_SYNONYMS] = {
+Synonym synonyms[] = {
 	"display find list print show view",
 	"information status",
 	...
