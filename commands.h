@@ -1,13 +1,10 @@
-#define NUM_COMMANDS 23
-#define NUM_SYNONYMS 3
-
-Synonym synonyms[NUM_SYNONYMS] = {
+Synonym synonyms[] = {
 	"display find list print show view",
 	"information status",
 	"remote upstream"
 };
 
-Command commands[NUM_COMMANDS] = {
+Command commands[] = {
 	/* command                     description        additional keywords */
 	{ "amixer -Mq set Master 1%-", "decrease volume", "down lower sound" },
 	{ "amixer -Mq set Master 1%+", "increase volume", "raise sound up" },
@@ -39,3 +36,6 @@ Command commands[NUM_COMMANDS] = {
 	{ "pacman -Ql [package]", "list files owned by package" },
 	{ "pacman -Qo [file]", "list packages that own file", "owned" }
 };
+
+#define NUM_COMMANDS (sizeof(commands) / sizeof(Command))
+#define NUM_SYNONYMS (sizeof(synonyms) / sizeof(Synonym))
